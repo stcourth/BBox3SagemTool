@@ -55,7 +55,6 @@
             this.panelLogin = new System.Windows.Forms.Panel();
             this.buttonInfo = new System.Windows.Forms.Button();
             this.panelUnsupported = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.labelUnsupported = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.labelRemember = new System.Windows.Forms.Label();
@@ -67,13 +66,10 @@
             this.textBoxIpAddress = new System.Windows.Forms.TextBox();
             this.panelFritzBox = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panelBBox2 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelBBox3S = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonConnect = new System.Windows.Forms.Button();
@@ -126,22 +122,26 @@
             this.backgroundWorkerLiveUpdate = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorkerDetectDevice = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorkerConnect = new System.ComponentModel.BackgroundWorker();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelDebug.SuspendLayout();
             this.panelLogin.SuspendLayout();
             this.panelUnsupported.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panelFritzBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panelBBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelBBox3S.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelInfo.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelBoxVectoring.SuspendLayout();
             this.panelBoxDsl.SuspendLayout();
             this.panelBoxLine.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // backgroundWorkerGetLineData
@@ -211,6 +211,7 @@
             // 
             // buttonCancel
             // 
+            this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.Enabled = false;
             this.buttonCancel.Location = new System.Drawing.Point(664, 299);
             this.buttonCancel.Name = "buttonCancel";
@@ -422,15 +423,6 @@
             this.panelUnsupported.TabIndex = 28;
             this.panelUnsupported.Visible = false;
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(8, 7);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(41, 39);
-            this.pictureBox4.TabIndex = 29;
-            this.pictureBox4.TabStop = false;
-            // 
             // labelUnsupported
             // 
             this.labelUnsupported.AutoSize = true;
@@ -552,18 +544,6 @@
             this.label10.MouseEnter += new System.EventHandler(this.panelThumb_MouseEnter);
             this.label10.MouseLeave += new System.EventHandler(this.panelThumb_MouseLeave);
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::BBox3Tool.Properties.Resources.fritzboxThumb;
-            this.pictureBox3.Location = new System.Drawing.Point(8, 7);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(93, 66);
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.panelThumb_Click);
-            this.pictureBox3.MouseEnter += new System.EventHandler(this.panelThumb_MouseEnter);
-            this.pictureBox3.MouseLeave += new System.EventHandler(this.panelThumb_MouseLeave);
-            // 
             // panelBBox2
             // 
             this.panelBBox2.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -591,18 +571,6 @@
             this.label9.MouseEnter += new System.EventHandler(this.panelThumb_MouseEnter);
             this.label9.MouseLeave += new System.EventHandler(this.panelThumb_MouseLeave);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::BBox3Tool.Properties.Resources.bbox2Thumb;
-            this.pictureBox2.Location = new System.Drawing.Point(8, 7);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(93, 66);
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.panelThumb_Click);
-            this.pictureBox2.MouseEnter += new System.EventHandler(this.panelThumb_MouseEnter);
-            this.pictureBox2.MouseLeave += new System.EventHandler(this.panelThumb_MouseLeave);
-            // 
             // panelBBox3S
             // 
             this.panelBBox3S.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -629,18 +597,6 @@
             this.label8.Click += new System.EventHandler(this.panelThumb_Click);
             this.label8.MouseEnter += new System.EventHandler(this.panelThumb_MouseEnter);
             this.label8.MouseLeave += new System.EventHandler(this.panelThumb_MouseLeave);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::BBox3Tool.Properties.Resources.bbox3Thumb;
-            this.pictureBox1.Location = new System.Drawing.Point(8, 7);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(93, 66);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.panelThumb_Click);
-            this.pictureBox1.MouseEnter += new System.EventHandler(this.panelThumb_MouseEnter);
-            this.pictureBox1.MouseLeave += new System.EventHandler(this.panelThumb_MouseLeave);
             // 
             // label5
             // 
@@ -1251,15 +1207,63 @@
             this.backgroundWorkerConnect.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerConnect_DoWork);
             this.backgroundWorkerConnect.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorkerConnect_RunWorkerCompleted);
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(8, 7);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(41, 39);
+            this.pictureBox4.TabIndex = 29;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::BBox3Tool.Properties.Resources.fritzboxThumb;
+            this.pictureBox3.Location = new System.Drawing.Point(8, 7);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(93, 66);
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.panelThumb_Click);
+            this.pictureBox3.MouseEnter += new System.EventHandler(this.panelThumb_MouseEnter);
+            this.pictureBox3.MouseLeave += new System.EventHandler(this.panelThumb_MouseLeave);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::BBox3Tool.Properties.Resources.bbox2Thumb;
+            this.pictureBox2.Location = new System.Drawing.Point(8, 7);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(93, 66);
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.panelThumb_Click);
+            this.pictureBox2.MouseEnter += new System.EventHandler(this.panelThumb_MouseEnter);
+            this.pictureBox2.MouseLeave += new System.EventHandler(this.panelThumb_MouseLeave);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::BBox3Tool.Properties.Resources.bbox3Thumb;
+            this.pictureBox1.Location = new System.Drawing.Point(8, 7);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(93, 66);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.panelThumb_Click);
+            this.pictureBox1.MouseEnter += new System.EventHandler(this.panelThumb_MouseEnter);
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.panelThumb_MouseLeave);
+            // 
             // Form1
             // 
+            this.AcceptButton = this.buttonConnect;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.buttonCancel;
             this.ClientSize = new System.Drawing.Size(759, 331);
             this.Controls.Add(this.panelInfo);
             this.Controls.Add(this.panelDebug);
             this.Controls.Add(this.panelLogin);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(775, 370);
             this.MinimumSize = new System.Drawing.Size(775, 370);
@@ -1272,16 +1276,12 @@
             this.panelLogin.PerformLayout();
             this.panelUnsupported.ResumeLayout(false);
             this.panelUnsupported.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panelFritzBox.ResumeLayout(false);
             this.panelFritzBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panelBBox2.ResumeLayout(false);
             this.panelBBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelBBox3S.ResumeLayout(false);
             this.panelBBox3S.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelInfo.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -1293,6 +1293,10 @@
             this.panelBoxDsl.PerformLayout();
             this.panelBoxLine.ResumeLayout(false);
             this.panelBoxLine.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
