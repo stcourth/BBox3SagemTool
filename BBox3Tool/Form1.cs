@@ -201,6 +201,17 @@ namespace BBox3Tool
             builder.AppendLine("ROP vectoring compatible:      " + boolToString(_session.VectoringROPCapable));
             builder.AppendLine("");
 
+
+            DeviceInfo deviceInfo = _session.GetDeviceInfo();
+            if (_session is Bbox3Session || _session is Bbox2Session)
+            {
+                builder.AppendLine("Hardware version:               " + deviceInfo.HardwareVersion);
+                builder.AppendLine("Firmware version:               " + deviceInfo.FirmwareVersion);
+                builder.AppendLine("");
+            }
+           
+
+
             builder.AppendLine("DSL standard:                  " + _session.DSLStandard.ToString().Replace("plus", "+"));
             if (_session.DSLStandard == DSLStandard.VDSL2)
             {
@@ -227,9 +238,10 @@ namespace BBox3Tool
                     builder.AppendLine("");
                     builder.AppendLine("Proximus profile name:         " + currentProfile.SpeedName);
                     builder.AppendLine("Proximus DLM profile:          " + boolToString(currentProfile.DlmProfile));
-                    builder.AppendLine("Proximus repair profile:       " + boolToString(currentProfile.RepairProfile));
+                    builder.AppendLine("Proximus repair profile:       " + boolToString(currentProfile.RepairProfile));                    
                 }
             }
+            
             builder.AppendLine("[/code]");
 
             Clipboard.SetText(builder.ToString());
@@ -808,6 +820,40 @@ namespace BBox3Tool
                 return true;
 
             return false;
+        }
+
+        private void textBoxIpAddress_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                buttonConnect_Click(sender, e);
+            }
+        }
+
+        private void textBoxUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxUsername_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                buttonConnect_Click(sender, e);
+            }
+        }
+
+        private void textBoxPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                buttonConnect_Click(sender, e);
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

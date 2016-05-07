@@ -227,7 +227,7 @@
             this.labelVDSLProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelVDSLProfile.Location = new System.Drawing.Point(129, 68);
             this.labelVDSLProfile.Name = "labelVDSLProfile";
-            this.labelVDSLProfile.Size = new System.Drawing.Size(59, 15);
+            this.labelVDSLProfile.Size = new System.Drawing.Size(57, 15);
             this.labelVDSLProfile.TabIndex = 40;
             this.labelVDSLProfile.Text = "unknown";
             // 
@@ -248,7 +248,7 @@
             this.labelProximusProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelProximusProfile.Location = new System.Drawing.Point(118, 43);
             this.labelProximusProfile.Name = "labelProximusProfile";
-            this.labelProximusProfile.Size = new System.Drawing.Size(59, 15);
+            this.labelProximusProfile.Size = new System.Drawing.Size(57, 15);
             this.labelProximusProfile.TabIndex = 38;
             this.labelProximusProfile.Text = "unknown";
             // 
@@ -269,7 +269,7 @@
             this.labelVectoringDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelVectoringDown.Location = new System.Drawing.Point(129, 44);
             this.labelVectoringDown.Name = "labelVectoringDown";
-            this.labelVectoringDown.Size = new System.Drawing.Size(59, 15);
+            this.labelVectoringDown.Size = new System.Drawing.Size(57, 15);
             this.labelVectoringDown.TabIndex = 36;
             this.labelVectoringDown.Text = "unknown";
             // 
@@ -279,7 +279,7 @@
             this.labelRepair.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRepair.Location = new System.Drawing.Point(118, 93);
             this.labelRepair.Name = "labelRepair";
-            this.labelRepair.Size = new System.Drawing.Size(59, 15);
+            this.labelRepair.Size = new System.Drawing.Size(57, 15);
             this.labelRepair.TabIndex = 35;
             this.labelRepair.Text = "unknown";
             // 
@@ -322,7 +322,7 @@
             this.labelDLM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDLM.Location = new System.Drawing.Point(118, 68);
             this.labelDLM.Name = "labelDLM";
-            this.labelDLM.Size = new System.Drawing.Size(59, 15);
+            this.labelDLM.Size = new System.Drawing.Size(57, 15);
             this.labelDLM.TabIndex = 31;
             this.labelDLM.Text = "unknown";
             // 
@@ -332,7 +332,7 @@
             this.labelDSLStandard.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDSLStandard.Location = new System.Drawing.Point(129, 43);
             this.labelDSLStandard.Name = "labelDSLStandard";
-            this.labelDSLStandard.Size = new System.Drawing.Size(59, 15);
+            this.labelDSLStandard.Size = new System.Drawing.Size(57, 15);
             this.labelDSLStandard.TabIndex = 49;
             this.labelDSLStandard.Text = "unknown";
             // 
@@ -342,7 +342,7 @@
             this.labelLinkUptime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLinkUptime.Location = new System.Drawing.Point(118, 69);
             this.labelLinkUptime.Name = "labelLinkUptime";
-            this.labelLinkUptime.Size = new System.Drawing.Size(59, 15);
+            this.labelLinkUptime.Size = new System.Drawing.Size(57, 15);
             this.labelLinkUptime.TabIndex = 60;
             this.labelLinkUptime.Text = "unknown";
             // 
@@ -352,7 +352,7 @@
             this.labelDeviceUptime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDeviceUptime.Location = new System.Drawing.Point(118, 44);
             this.labelDeviceUptime.Name = "labelDeviceUptime";
-            this.labelDeviceUptime.Size = new System.Drawing.Size(59, 15);
+            this.labelDeviceUptime.Size = new System.Drawing.Size(57, 15);
             this.labelDeviceUptime.TabIndex = 58;
             this.labelDeviceUptime.Text = "unknown";
             // 
@@ -362,7 +362,7 @@
             this.labelHardwareVersion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHardwareVersion.Location = new System.Drawing.Point(118, 94);
             this.labelHardwareVersion.Name = "labelHardwareVersion";
-            this.labelHardwareVersion.Size = new System.Drawing.Size(59, 15);
+            this.labelHardwareVersion.Size = new System.Drawing.Size(57, 15);
             this.labelHardwareVersion.TabIndex = 55;
             this.labelHardwareVersion.Text = "unknown";
             // 
@@ -372,7 +372,7 @@
             this.labelFirmwareVersion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFirmwareVersion.Location = new System.Drawing.Point(118, 119);
             this.labelFirmwareVersion.Name = "labelFirmwareVersion";
-            this.labelFirmwareVersion.Size = new System.Drawing.Size(59, 15);
+            this.labelFirmwareVersion.Size = new System.Drawing.Size(57, 15);
             this.labelFirmwareVersion.TabIndex = 54;
             this.labelFirmwareVersion.Text = "unknown";
             // 
@@ -483,6 +483,7 @@
             this.textBoxPassword.PasswordChar = '*';
             this.textBoxPassword.Size = new System.Drawing.Size(105, 21);
             this.textBoxPassword.TabIndex = 24;
+            this.textBoxPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxPassword_KeyDown);
             // 
             // textBoxUsername
             // 
@@ -492,6 +493,7 @@
             this.textBoxUsername.Size = new System.Drawing.Size(105, 21);
             this.textBoxUsername.TabIndex = 22;
             this.textBoxUsername.Text = "User";
+            this.textBoxUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxUsername_KeyDown);
             // 
             // label3
             // 
@@ -521,6 +523,7 @@
             this.textBoxIpAddress.Size = new System.Drawing.Size(105, 21);
             this.textBoxIpAddress.TabIndex = 19;
             this.textBoxIpAddress.Text = "192.168.1.1";
+            this.textBoxIpAddress.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxIpAddress_KeyDown);
             // 
             // panelFritzBox
             // 
@@ -874,7 +877,7 @@
             this.labelVectoringUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelVectoringUp.Location = new System.Drawing.Point(129, 69);
             this.labelVectoringUp.Name = "labelVectoringUp";
-            this.labelVectoringUp.Size = new System.Drawing.Size(59, 15);
+            this.labelVectoringUp.Size = new System.Drawing.Size(57, 15);
             this.labelVectoringUp.TabIndex = 51;
             this.labelVectoringUp.Text = "unknown";
             // 
@@ -906,7 +909,7 @@
             this.labelVectoringModemCapable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelVectoringModemCapable.Location = new System.Drawing.Point(129, 94);
             this.labelVectoringModemCapable.Name = "labelVectoringModemCapable";
-            this.labelVectoringModemCapable.Size = new System.Drawing.Size(59, 15);
+            this.labelVectoringModemCapable.Size = new System.Drawing.Size(57, 15);
             this.labelVectoringModemCapable.TabIndex = 49;
             this.labelVectoringModemCapable.Text = "unknown";
             // 
@@ -927,7 +930,7 @@
             this.labelVectoringROPCapable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelVectoringROPCapable.Location = new System.Drawing.Point(129, 119);
             this.labelVectoringROPCapable.Name = "labelVectoringROPCapable";
-            this.labelVectoringROPCapable.Size = new System.Drawing.Size(59, 15);
+            this.labelVectoringROPCapable.Size = new System.Drawing.Size(57, 15);
             this.labelVectoringROPCapable.TabIndex = 40;
             this.labelVectoringROPCapable.Text = "unknown";
             // 
@@ -952,7 +955,7 @@
             this.labelDistance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDistance.Location = new System.Drawing.Point(129, 93);
             this.labelDistance.Name = "labelDistance";
-            this.labelDistance.Size = new System.Drawing.Size(59, 15);
+            this.labelDistance.Size = new System.Drawing.Size(57, 15);
             this.labelDistance.TabIndex = 45;
             this.labelDistance.Text = "unknown";
             // 
@@ -1262,6 +1265,7 @@
             this.MinimumSize = new System.Drawing.Size(775, 370);
             this.Name = "Form1";
             this.Text = "B-Box 3 Sagem Tool";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.panelDebug.ResumeLayout(false);
             this.panelDebug.PerformLayout();
             this.panelLogin.ResumeLayout(false);
