@@ -79,8 +79,8 @@ namespace BBox3Tool.utils
                     if (profileNode.Attributes != null)
                     {
                         ProximusLineProfile profile = new ProximusLineProfile(
-                            profileNode.Attributes["name"].Value, 
-                            profileNode.Attributes["speedname"].Value, 
+                            profileNode.Attributes["name"].Value,
+                            profileNode.Attributes["speedname"].Value,
                             confirmedDownloadList.Last(),
                             confirmedUploadList.Last(),
                             Convert.ToBoolean(profileNode.Attributes["provisioning"].Value),
@@ -88,7 +88,7 @@ namespace BBox3Tool.utils
                             Convert.ToBoolean(profileNode.Attributes["repair"].Value),
                             Convert.ToBoolean(profileNode.Attributes["vectoring"].Value),
                             Convert.ToBoolean(profileNode.Attributes["vectoring-up"].Value),
-                            (VDSL2Profile) Enum.Parse(typeof (VDSL2Profile), "p" + profileNode.Attributes["vdsl2"].Value),
+                            (VDSL2Profile)Enum.Parse(typeof(VDSL2Profile), "p" + profileNode.Attributes["vdsl2"].Value),
                             confirmedDownloadList.Distinct().ToList(),
                             confirmedUploadList.Distinct().ToList(),
                             Convert.ToDecimal(profileNode.Attributes["min"].Value, CultureInfo.InvariantCulture),
@@ -146,9 +146,9 @@ namespace BBox3Tool.utils
                           .First().x;
                 }*/
 
-                //get profiles with closest speeds in range of +256kb
+                //get profiles with closest speeds in range of 512kb
                 List<ProximusLineProfile> rangeMatches = profiles.Select(x => new { x, diffDownload = Math.Abs(x.DownloadSpeed - downloadSpeed), diffUpload = Math.Abs(x.UploadSpeed - uploadSpeed) })
-                    .Where(x => x.diffDownload <= 256 && x.diffUpload <= 256)
+                    .Where(x => x.diffDownload <= 512 && x.diffUpload <= 512)
                     .OrderBy(p => p.diffDownload)
                     .ThenBy(p => p.diffUpload)
                     .Select(y => y.x)
@@ -174,7 +174,7 @@ namespace BBox3Tool.utils
                     if (rangeMatches.Count == 1)
                         return rangeMatches.First();
                     else
-                    { 
+                    {
                         //multiple found, check which values are certain
 
                         //provisioning
@@ -204,7 +204,7 @@ namespace BBox3Tool.utils
                         VDSL2Profile vdsl2Profile = VDSL2Profile.unknown;
                         if (rangeMatches.GroupBy(x => x.ProfileVDSL2).Count() == 1)
                             vdsl2Profile = rangeMatches.First().ProfileVDSL2;
-                        
+
                         //LPXXX
                         string lp = "unknown";
                         if (rangeMatches.GroupBy(x => x.LpName).Count() == 1)
@@ -218,7 +218,7 @@ namespace BBox3Tool.utils
                         return new ProximusLineProfile(lp, name, downloadSpeed, uploadSpeed, provisioning, dlm, repair, vectoring, vectoringUp, vdsl2Profile, new List<int>(), new List<int>(), 0, 0);
                     }
                 }
-                    
+
             }
 
             //no matches found

@@ -93,9 +93,9 @@ namespace BBox3Tool.utils
                     XmlNode nodeLoginPassword = settingsDoc.SelectSingleNode("//document/login/password");
                     XmlNode nodeLoginDevice = settingsDoc.SelectSingleNode("//document/login/device");
 
-                    if (nodeLoginIp != null) 
+                    if (nodeLoginIp != null)
                         settings.Host = nodeLoginIp.InnerText;
-                    if (nodeLoginUser != null) 
+                    if (nodeLoginUser != null)
                         settings.Username = nodeLoginUser.InnerText;
 
                     try

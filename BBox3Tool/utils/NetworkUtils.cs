@@ -38,12 +38,12 @@ namespace BBox3Tool.utils
                     {
                         case WebRequestMode.Get:
                             url = new Uri(url + "?" + dataStr);
-                            request = (HttpWebRequest) WebRequest.Create(url);
+                            request = (HttpWebRequest)WebRequest.Create(url);
                             request.Method = "GET";
                             request.Host = url.Host;
                             break;
                         case WebRequestMode.Post:
-                            request = (HttpWebRequest) WebRequest.Create(url);
+                            request = (HttpWebRequest)WebRequest.Create(url);
                             request.Method = "POST";
                             request.Host = url.Host;
 
@@ -67,7 +67,7 @@ namespace BBox3Tool.utils
                     }
                 }
                 else
-                    request = (HttpWebRequest) WebRequest.Create(url);
+                    request = (HttpWebRequest)WebRequest.Create(url);
 
                 //set headers, fake real browser the best we can
                 request.KeepAlive = true;
@@ -125,7 +125,7 @@ namespace BBox3Tool.utils
                     return Device.FritzBox7390;
                 return Device.Unknown;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Debugger.Log(0, "error", ex.ToString());
                 return Device.Unknown;

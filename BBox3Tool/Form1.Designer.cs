@@ -55,6 +55,7 @@
             this.panelLogin = new System.Windows.Forms.Panel();
             this.buttonInfo = new System.Windows.Forms.Button();
             this.panelUnsupported = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.labelUnsupported = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.labelRemember = new System.Windows.Forms.Label();
@@ -66,10 +67,13 @@
             this.textBoxIpAddress = new System.Windows.Forms.TextBox();
             this.panelFritzBox = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panelBBox2 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelBBox3S = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonConnect = new System.Windows.Forms.Button();
@@ -82,6 +86,7 @@
             this.label35 = new System.Windows.Forms.Label();
             this.distanceLabel = new System.Windows.Forms.Label();
             this.panelInfo = new System.Windows.Forms.Panel();
+            this.buttonRefresh = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -122,26 +127,22 @@
             this.backgroundWorkerLiveUpdate = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorkerDetectDevice = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorkerConnect = new System.ComponentModel.BackgroundWorker();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelDebug.SuspendLayout();
             this.panelLogin.SuspendLayout();
             this.panelUnsupported.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panelFritzBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panelBBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelBBox3S.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelInfo.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelBoxVectoring.SuspendLayout();
             this.panelBoxDsl.SuspendLayout();
             this.panelBoxLine.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // backgroundWorkerGetLineData
@@ -211,7 +212,6 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.Enabled = false;
             this.buttonCancel.Location = new System.Drawing.Point(664, 299);
             this.buttonCancel.Name = "buttonCancel";
@@ -226,7 +226,7 @@
             // 
             this.labelVDSLProfile.AutoSize = true;
             this.labelVDSLProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelVDSLProfile.Location = new System.Drawing.Point(129, 68);
+            this.labelVDSLProfile.Location = new System.Drawing.Point(124, 68);
             this.labelVDSLProfile.Name = "labelVDSLProfile";
             this.labelVDSLProfile.Size = new System.Drawing.Size(57, 15);
             this.labelVDSLProfile.TabIndex = 40;
@@ -268,7 +268,7 @@
             // 
             this.labelVectoringDown.AutoSize = true;
             this.labelVectoringDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelVectoringDown.Location = new System.Drawing.Point(129, 44);
+            this.labelVectoringDown.Location = new System.Drawing.Point(124, 44);
             this.labelVectoringDown.Name = "labelVectoringDown";
             this.labelVectoringDown.Size = new System.Drawing.Size(57, 15);
             this.labelVectoringDown.TabIndex = 36;
@@ -331,7 +331,7 @@
             // 
             this.labelDSLStandard.AutoSize = true;
             this.labelDSLStandard.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDSLStandard.Location = new System.Drawing.Point(129, 43);
+            this.labelDSLStandard.Location = new System.Drawing.Point(124, 43);
             this.labelDSLStandard.Name = "labelDSLStandard";
             this.labelDSLStandard.Size = new System.Drawing.Size(57, 15);
             this.labelDSLStandard.TabIndex = 49;
@@ -422,6 +422,15 @@
             this.panelUnsupported.Size = new System.Drawing.Size(370, 49);
             this.panelUnsupported.TabIndex = 28;
             this.panelUnsupported.Visible = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(8, 7);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(41, 39);
+            this.pictureBox4.TabIndex = 29;
+            this.pictureBox4.TabStop = false;
             // 
             // labelUnsupported
             // 
@@ -544,6 +553,18 @@
             this.label10.MouseEnter += new System.EventHandler(this.panelThumb_MouseEnter);
             this.label10.MouseLeave += new System.EventHandler(this.panelThumb_MouseLeave);
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::BBox3Tool.Properties.Resources.fritzboxThumb;
+            this.pictureBox3.Location = new System.Drawing.Point(8, 7);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(93, 66);
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.panelThumb_Click);
+            this.pictureBox3.MouseEnter += new System.EventHandler(this.panelThumb_MouseEnter);
+            this.pictureBox3.MouseLeave += new System.EventHandler(this.panelThumb_MouseLeave);
+            // 
             // panelBBox2
             // 
             this.panelBBox2.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -571,6 +592,18 @@
             this.label9.MouseEnter += new System.EventHandler(this.panelThumb_MouseEnter);
             this.label9.MouseLeave += new System.EventHandler(this.panelThumb_MouseLeave);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::BBox3Tool.Properties.Resources.bbox2Thumb;
+            this.pictureBox2.Location = new System.Drawing.Point(8, 7);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(93, 66);
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.panelThumb_Click);
+            this.pictureBox2.MouseEnter += new System.EventHandler(this.panelThumb_MouseEnter);
+            this.pictureBox2.MouseLeave += new System.EventHandler(this.panelThumb_MouseLeave);
+            // 
             // panelBBox3S
             // 
             this.panelBBox3S.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -597,6 +630,18 @@
             this.label8.Click += new System.EventHandler(this.panelThumb_Click);
             this.label8.MouseEnter += new System.EventHandler(this.panelThumb_MouseEnter);
             this.label8.MouseLeave += new System.EventHandler(this.panelThumb_MouseLeave);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::BBox3Tool.Properties.Resources.bbox3Thumb;
+            this.pictureBox1.Location = new System.Drawing.Point(8, 7);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(93, 66);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.panelThumb_Click);
+            this.pictureBox1.MouseEnter += new System.EventHandler(this.panelThumb_MouseEnter);
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.panelThumb_MouseLeave);
             // 
             // label5
             // 
@@ -724,6 +769,7 @@
             // panelInfo
             // 
             this.panelInfo.BackColor = System.Drawing.Color.White;
+            this.panelInfo.Controls.Add(this.buttonRefresh);
             this.panelInfo.Controls.Add(this.panel4);
             this.panelInfo.Controls.Add(this.panel3);
             this.panelInfo.Controls.Add(this.panel2);
@@ -739,6 +785,16 @@
             this.panelInfo.Size = new System.Drawing.Size(759, 331);
             this.panelInfo.TabIndex = 61;
             this.panelInfo.Visible = false;
+            // 
+            // buttonRefresh
+            // 
+            this.buttonRefresh.Location = new System.Drawing.Point(101, 297);
+            this.buttonRefresh.Name = "buttonRefresh";
+            this.buttonRefresh.Size = new System.Drawing.Size(83, 23);
+            this.buttonRefresh.TabIndex = 67;
+            this.buttonRefresh.Text = "Refresh";
+            this.buttonRefresh.UseVisualStyleBackColor = true;
+            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
             // 
             // panel4
             // 
@@ -831,7 +887,7 @@
             // 
             this.labelVectoringUp.AutoSize = true;
             this.labelVectoringUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelVectoringUp.Location = new System.Drawing.Point(129, 69);
+            this.labelVectoringUp.Location = new System.Drawing.Point(124, 69);
             this.labelVectoringUp.Name = "labelVectoringUp";
             this.labelVectoringUp.Size = new System.Drawing.Size(57, 15);
             this.labelVectoringUp.TabIndex = 51;
@@ -863,7 +919,7 @@
             // 
             this.labelVectoringModemCapable.AutoSize = true;
             this.labelVectoringModemCapable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelVectoringModemCapable.Location = new System.Drawing.Point(129, 94);
+            this.labelVectoringModemCapable.Location = new System.Drawing.Point(124, 94);
             this.labelVectoringModemCapable.Name = "labelVectoringModemCapable";
             this.labelVectoringModemCapable.Size = new System.Drawing.Size(57, 15);
             this.labelVectoringModemCapable.TabIndex = 49;
@@ -884,7 +940,7 @@
             // 
             this.labelVectoringROPCapable.AutoSize = true;
             this.labelVectoringROPCapable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelVectoringROPCapable.Location = new System.Drawing.Point(129, 119);
+            this.labelVectoringROPCapable.Location = new System.Drawing.Point(124, 119);
             this.labelVectoringROPCapable.Name = "labelVectoringROPCapable";
             this.labelVectoringROPCapable.Size = new System.Drawing.Size(57, 15);
             this.labelVectoringROPCapable.TabIndex = 40;
@@ -909,7 +965,7 @@
             // 
             this.labelDistance.AutoSize = true;
             this.labelDistance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDistance.Location = new System.Drawing.Point(129, 93);
+            this.labelDistance.Location = new System.Drawing.Point(124, 93);
             this.labelDistance.Name = "labelDistance";
             this.labelDistance.Size = new System.Drawing.Size(57, 15);
             this.labelDistance.TabIndex = 45;
@@ -1207,63 +1263,15 @@
             this.backgroundWorkerConnect.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerConnect_DoWork);
             this.backgroundWorkerConnect.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorkerConnect_RunWorkerCompleted);
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(8, 7);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(41, 39);
-            this.pictureBox4.TabIndex = 29;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::BBox3Tool.Properties.Resources.fritzboxThumb;
-            this.pictureBox3.Location = new System.Drawing.Point(8, 7);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(93, 66);
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.panelThumb_Click);
-            this.pictureBox3.MouseEnter += new System.EventHandler(this.panelThumb_MouseEnter);
-            this.pictureBox3.MouseLeave += new System.EventHandler(this.panelThumb_MouseLeave);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::BBox3Tool.Properties.Resources.bbox2Thumb;
-            this.pictureBox2.Location = new System.Drawing.Point(8, 7);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(93, 66);
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.panelThumb_Click);
-            this.pictureBox2.MouseEnter += new System.EventHandler(this.panelThumb_MouseEnter);
-            this.pictureBox2.MouseLeave += new System.EventHandler(this.panelThumb_MouseLeave);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::BBox3Tool.Properties.Resources.bbox3Thumb;
-            this.pictureBox1.Location = new System.Drawing.Point(8, 7);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(93, 66);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.panelThumb_Click);
-            this.pictureBox1.MouseEnter += new System.EventHandler(this.panelThumb_MouseEnter);
-            this.pictureBox1.MouseLeave += new System.EventHandler(this.panelThumb_MouseLeave);
-            // 
             // Form1
             // 
-            this.AcceptButton = this.buttonConnect;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.CancelButton = this.buttonCancel;
             this.ClientSize = new System.Drawing.Size(759, 331);
             this.Controls.Add(this.panelInfo);
             this.Controls.Add(this.panelDebug);
             this.Controls.Add(this.panelLogin);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(775, 370);
             this.MinimumSize = new System.Drawing.Size(775, 370);
@@ -1276,12 +1284,16 @@
             this.panelLogin.PerformLayout();
             this.panelUnsupported.ResumeLayout(false);
             this.panelUnsupported.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panelFritzBox.ResumeLayout(false);
             this.panelFritzBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panelBBox2.ResumeLayout(false);
             this.panelBBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelBBox3S.ResumeLayout(false);
             this.panelBBox3S.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelInfo.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -1293,10 +1305,6 @@
             this.panelBoxDsl.PerformLayout();
             this.panelBoxLine.ResumeLayout(false);
             this.panelBoxLine.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1400,6 +1408,7 @@
         private System.Windows.Forms.Label labelVectoringUp;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button buttonRefresh;
     }
 }
 

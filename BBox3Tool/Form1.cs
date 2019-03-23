@@ -201,6 +201,10 @@ namespace BBox3Tool
             builder.AppendLine("ROP vectoring compatible:      " + boolToString(_session.VectoringROPCapable));
             builder.AppendLine("");
 
+            var dslStandardValue = _session.DSLStandard.ToString().Replace("plus", "+");
+            if (_session.Annex != Annex.unknown)
+                dslStandardValue += " Annex " + _session.Annex + "";
+            builder.AppendLine("DSL standard:                  " + dslStandardValue);
 
             DeviceInfo deviceInfo = _session.GetDeviceInfo();
             if (_session is Bbox3Session || _session is Bbox2Session)
@@ -209,24 +213,20 @@ namespace BBox3Tool
                 builder.AppendLine("Firmware version:               " + deviceInfo.FirmwareVersion);
                 builder.AppendLine("");
             }
-           
-
-
-            builder.AppendLine("DSL standard:                  " + _session.DSLStandard.ToString().Replace("plus", "+"));
             if (_session.DSLStandard == DSLStandard.VDSL2)
             {
                 ProximusLineProfile currentProfile = ProfileUtils.GetProfile(_profiles, _session.UpstreamCurrentBitRate, _session.DownstreamCurrentBitRate, _session.VectoringDown, _session.VectoringUp, _session.Distance);
                 if (currentProfile == null)
                 {
-                    builder.AppendLine("DSL profile:                   Unknown");
+                    builder.AppendLine("DSL profile:                   " + StatsUtils.GetVdsl2ProfileFallBack(_session.DownstreamCurrentBitRate, _session.UpstreamCurrentBitRate, _session.DownstreamAttenuation, (_session.VectoringDown || _session.VectoringUp)).ToString().Replace("p", ""));
                     if (_session is Bbox3Session)
                         builder.AppendLine("Estimated distance:            " + (_session.Distance == null ? "unknown" : ((decimal)_session.Distance).ToString("0 'm'")));
                     else
                         builder.AppendLine("Distance                       " + (_session.Distance == null ? "unknown" : ((decimal)_session.Distance).ToString("0 'm'")));
                     builder.AppendLine("");
-                    builder.AppendLine("Proximus profile name:         Unknown");
-                    builder.AppendLine("Proximus DLM profile:          Unknown");
-                    builder.AppendLine("Proximus repair profile:       Unknown");
+                    builder.AppendLine("Proximus profile name:         unknown");
+                    builder.AppendLine("Proximus DLM profile:          unknown");
+                    builder.AppendLine("Proximus repair profile:       unknown");
                 }
                 else
                 {
@@ -238,10 +238,9 @@ namespace BBox3Tool
                     builder.AppendLine("");
                     builder.AppendLine("Proximus profile name:         " + currentProfile.SpeedName);
                     builder.AppendLine("Proximus DLM profile:          " + boolToString(currentProfile.DlmProfile));
-                    builder.AppendLine("Proximus repair profile:       " + boolToString(currentProfile.RepairProfile));                    
+                    builder.AppendLine("Proximus repair profile:       " + boolToString(currentProfile.RepairProfile));
                 }
             }
-            
             builder.AppendLine("[/code]");
 
             Clipboard.SetText(builder.ToString());
@@ -304,6 +303,7 @@ namespace BBox3Tool
             {
                 //set button states
                 buttonClipboard.Enabled = false;
+                buttonRefresh.Enabled = false;
                 buttonCancel.Enabled = true;
                 buttonConnect.Text = "Connect";
 
@@ -357,6 +357,7 @@ namespace BBox3Tool
             {
                 //disable connect button
                 ThreadUtils.SetButtonEnabledFromThread(buttonConnect, false);
+                ThreadUtils.SetButtonTextFromThread(buttonRefresh, "Refresh");
 
                 if (_session is Bbox3Session)
                     ThreadUtils.SetLabelTextFromThread(distanceLabel, "Estimated distance");
@@ -423,7 +424,10 @@ namespace BBox3Tool
 
                     // Get dsl standard
                     //-----------------
-                    ThreadUtils.SetLabelTextFromThread(labelDSLStandard, _session.DSLStandard.ToString().Replace("plus", "+"));
+                    var dslStandardValue = _session.DSLStandard.ToString().Replace("plus", "+");
+                    if (_session.Annex != Annex.unknown)
+                        dslStandardValue += " Annex " + _session.Annex + "";
+                    ThreadUtils.SetLabelTextFromThread(labelDSLStandard, dslStandardValue);
 
                     // Get sync values
                     //----------------
@@ -453,7 +457,7 @@ namespace BBox3Tool
                             ThreadUtils.SetLabelTextFromThread(labelDLM, "unknown");
                             ThreadUtils.SetLabelTextFromThread(labelRepair, "unknown");
                             ThreadUtils.SetLabelTextFromThread(labelProximusProfile, "unknown");
-                            ThreadUtils.SetLabelTextFromThread(labelVDSLProfile, "unknown");
+                            ThreadUtils.SetLabelTextFromThread(labelVDSLProfile, StatsUtils.GetVdsl2ProfileFallBack(_session.DownstreamCurrentBitRate, _session.UpstreamCurrentBitRate, _session.DownstreamAttenuation, (_session.VectoringDown || _session.VectoringUp)).ToString().Replace("p", ""));
                         }
                         else
                         {
@@ -461,7 +465,6 @@ namespace BBox3Tool
                             ThreadUtils.SetLabelTextFromThread(labelRepair, boolToString(currentProfile.RepairProfile));
                             ThreadUtils.SetLabelTextFromThread(labelProximusProfile, currentProfile.SpeedName);
                             ThreadUtils.SetLabelTextFromThread(labelVDSLProfile, currentProfile.ProfileVDSL2.ToString().Replace("p", ""));
-
                         }
                     }
                     else
@@ -541,6 +544,7 @@ namespace BBox3Tool
         private void backgroundWorkerGetLineData_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             buttonClipboard.Enabled = true;
+            buttonRefresh.Enabled = true;
             buttonConnect.Enabled = true;
             buttonCancel.Enabled = false;
         }
@@ -822,17 +826,14 @@ namespace BBox3Tool
             return false;
         }
 
-        private void textBoxIpAddress_KeyDown(object sender, KeyEventArgs e)
+        //refresh data
+        //------------
+        private void buttonRefresh_Click(object sender, EventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                buttonConnect_Click(sender, e);
-            }
-        }
-
-        private void textBoxUsername_TextChanged(object sender, EventArgs e)
-        {
-
+            buttonClipboard.Enabled = false;
+            buttonRefresh.Enabled = false;
+            buttonRefresh.Text = "Refreshing...";
+            InitNormalMode();
         }
 
         private void textBoxUsername_KeyDown(object sender, KeyEventArgs e)
@@ -851,9 +852,19 @@ namespace BBox3Tool
             }
         }
 
+        private void textBoxIpAddress_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                buttonConnect_Click(sender, e);
+            }
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
         }
     }
+
+  
 }

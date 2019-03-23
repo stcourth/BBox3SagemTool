@@ -69,6 +69,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="enums\Annex.cs" />
     <Compile Include="enums\Device.cs" />
     <Compile Include="FormAbout.cs">
       <SubType>Form</SubType>
@@ -87,6 +88,7 @@
     <Compile Include="utils\ProfileUtils.cs" />
     <Compile Include="objects\DeviceSettings.cs" />
     <Compile Include="utils\SettingsUtils.cs" />
+    <Compile Include="utils\StatsUtils.cs" />
     <Compile Include="utils\ThreadUtils.cs" />
     <Compile Include="session\Bbox2Session.cs" />
     <Compile Include="session\Bbox3Session.cs" />

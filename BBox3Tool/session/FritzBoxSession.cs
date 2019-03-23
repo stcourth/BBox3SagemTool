@@ -13,15 +13,16 @@ namespace BBox3Tool.session
         private TelnetConnection _tc;
 
         public FritzBoxSession()
-	    {
+        {
             DeviceName = "Fritz!Box 7390";
             DSLStandard = DSLStandard.unknown;
+            Annex = Annex.unknown;
             Distance = null;
             VectoringDown = false;
             VectoringUp = false;
             VectoringDeviceCapable = true;
-            VectoringROPCapable = null;
-	    }
+            VectoringROPCapable = false;
+        }
 
         //TODO FritzBox:
         //- check vectoring down : G.INP down > 10
@@ -69,7 +70,8 @@ namespace BBox3Tool.session
             return true;
         }
 
-        public void RefreshData() { 
+        public void RefreshData()
+        {
             //not implemented
         }
 
@@ -228,11 +230,13 @@ namespace BBox3Tool.session
         public bool VectoringDown { get; private set; }
 
         public bool VectoringUp { get; private set; }
-        
+
         public bool VectoringDeviceCapable { get; private set; }
 
-        public bool? VectoringROPCapable { get; private set; }
+        public bool VectoringROPCapable { get; private set; }
 
         public DSLStandard DSLStandard { get; private set; }
+
+        public Annex Annex { get; private set; }
     }
 }

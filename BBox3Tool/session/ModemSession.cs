@@ -33,8 +33,9 @@ namespace BBox3Tool.session
         bool VectoringDown { get; }
         bool VectoringUp { get; }
         bool VectoringDeviceCapable { get; }
-        bool? VectoringROPCapable { get; }
+        bool VectoringROPCapable { get; }
         bool LineConnected { get; }
         DSLStandard DSLStandard { get; }
+        Annex Annex { get; }
     }
 }

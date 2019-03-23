@@ -9,7 +9,8 @@ using System.Text;
 
 namespace BBox3Tool.objects
 {
-    enum Verbs {
+    enum Verbs
+    {
         WILL = 251,
         WONT = 252,
         DO = 253,
@@ -32,24 +33,24 @@ namespace BBox3Tool.objects
             _tcpSocket = new TcpClient(hostname, port);
         }
 
-       /* public string Login(string Username,string Password,int LoginTimeOutMs)
-        {
-            int oldTimeOutMs = TimeOutMs;
-            TimeOutMs = LoginTimeOutMs;
-            string s = Read();
-            if (!s.TrimEnd().EndsWith(":"))
-               throw new Exception("Failed to connect : no login prompt");
-            WriteLine(Username);
+        /* public string Login(string Username,string Password,int LoginTimeOutMs)
+         {
+             int oldTimeOutMs = TimeOutMs;
+             TimeOutMs = LoginTimeOutMs;
+             string s = Read();
+             if (!s.TrimEnd().EndsWith(":"))
+                throw new Exception("Failed to connect : no login prompt");
+             WriteLine(Username);
 
-            s += Read();
-            if (!s.TrimEnd().EndsWith(":"))
-                throw new Exception("Failed to connect : no password prompt");
-            WriteLine(Password);
+             s += Read();
+             if (!s.TrimEnd().EndsWith(":"))
+                 throw new Exception("Failed to connect : no password prompt");
+             WriteLine(Password);
 
-            s += Read();
-            TimeOutMs = oldTimeOutMs;
-            return s;
-        }*/
+             s += Read();
+             TimeOutMs = oldTimeOutMs;
+             return s;
+         }*/
 
         public void WriteLine(string cmd)
         {
@@ -59,14 +60,14 @@ namespace BBox3Tool.objects
         public void Write(string cmd)
         {
             if (!_tcpSocket.Connected) return;
-            byte[] buf = Encoding.ASCII.GetBytes(cmd.Replace("\0xFF","\0xFF\0xFF"));
+            byte[] buf = Encoding.ASCII.GetBytes(cmd.Replace("\0xFF", "\0xFF\0xFF"));
             _tcpSocket.GetStream().Write(buf, 0, buf.Length);
         }
 
         public string Read(int timeOutMillis)
         {
             if (!_tcpSocket.Connected) return null;
-            StringBuilder sb=new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             do
             {
                 ParseTelnet(sb);
@@ -92,7 +93,7 @@ namespace BBox3Tool.objects
                 int input = _tcpSocket.GetStream().ReadByte();
                 switch (input)
                 {
-                    case -1 :
+                    case -1:
                         break;
                     case (int)Verbs.IAC:
                         // interpret as command
@@ -100,11 +101,11 @@ namespace BBox3Tool.objects
                         if (inputverb == -1) break;
                         switch (inputverb)
                         {
-                            case (int)Verbs.IAC: 
+                            case (int)Verbs.IAC:
                                 //literal IAC = 255 escaped, so append char 255 to string
                                 sb.Append(inputverb);
                                 break;
-                            case (int)Verbs.DO: 
+                            case (int)Verbs.DO:
                             case (int)Verbs.DONT:
                             case (int)Verbs.WILL:
                             case (int)Verbs.WONT:
@@ -112,16 +113,16 @@ namespace BBox3Tool.objects
                                 int inputoption = _tcpSocket.GetStream().ReadByte();
                                 if (inputoption == -1) break;
                                 _tcpSocket.GetStream().WriteByte((byte)Verbs.IAC);
-                                if (inputoption == (int)Options.SGA )
-                                    _tcpSocket.GetStream().WriteByte(inputverb == (int)Verbs.DO ? (byte)Verbs.WILL:(byte)Verbs.DO); 
+                                if (inputoption == (int)Options.SGA)
+                                    _tcpSocket.GetStream().WriteByte(inputverb == (int)Verbs.DO ? (byte)Verbs.WILL : (byte)Verbs.DO);
                                 else
-                                    _tcpSocket.GetStream().WriteByte(inputverb == (int)Verbs.DO ? (byte)Verbs.WONT : (byte)Verbs.DONT); 
+                                    _tcpSocket.GetStream().WriteByte(inputverb == (int)Verbs.DO ? (byte)Verbs.WONT : (byte)Verbs.DONT);
                                 _tcpSocket.GetStream().WriteByte((byte)inputoption);
                                 break;
                         }
                         break;
                     default:
-                        sb.Append( (char)input );
+                        sb.Append((char)input);
                         break;
                 }
             }

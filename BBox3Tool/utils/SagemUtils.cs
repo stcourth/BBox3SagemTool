@@ -34,7 +34,7 @@ namespace BBox3Tool.utils
         /// <returns>random unsigned int</returns>
         public static string GetLocalNonce()
         {
-            return ((uint) new Random(DateTime.Now.Millisecond).Next(Int32.MaxValue)).ToString();
+            return ((uint)new Random(DateTime.Now.Millisecond).Next(Int32.MaxValue)).ToString();
         }
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace BBox3Tool.utils
         /// <returns>Calculated Ha1 request value</returns>
         public static string CalcHa1(string user, string password, string nonce)
         {
-           return Md5(user + ":" + nonce + ":" + Md5(password));
+            return Md5(user + ":" + nonce + ":" + Md5(password));
         }
 
         /// <summary>
@@ -59,7 +59,7 @@ namespace BBox3Tool.utils
         public static string CalcHa1Cookie(string user, string password, string nonce)
         {
             string ha1 = CalcHa1(user, password, nonce);
-            return ha1.Substring(0,10) + Md5(password) + ha1.Substring(10);
+            return ha1.Substring(0, 10) + Md5(password) + ha1.Substring(10);
         }
 
         /// <summary>
